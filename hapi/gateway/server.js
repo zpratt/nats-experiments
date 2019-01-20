@@ -1,6 +1,6 @@
 const Hapi = require('hapi');
 const HapiHemera = require('hapi-hemera');
-const topics = require('./coffee-shops-receiver/topics');
+const addRoute = require('./routes/add');
 
 const server = new Hapi.Server({
     port: 5000,
@@ -24,16 +24,7 @@ async function start() {
         }
     });
 
-    server.route({
-        method: 'GET',
-        path: '/api/add',
-        handler: async (request) => {
-            return request.hemera.act({
-                topic: topics.coffeeShopsReceiverTopic,
-                cmd: 'add'
-            });
-        }
-    });
+    server.route(addRoute);
 
     await server.start();
 

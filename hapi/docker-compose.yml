@@ -12,7 +12,7 @@ services:
   api:
     image: example-api
     build:
-      context: "."
+      context: "./gateway"
     depends_on:
       - nats
     environment:

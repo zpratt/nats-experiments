@@ -1,7 +1,7 @@
 FROM node:10-alpine as builder
+USER root
 
 WORKDIR /usr/src/app
-USER root
 
 COPY  . .
 RUN npm i --only=production
