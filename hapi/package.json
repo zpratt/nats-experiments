@@ -1,0 +1,31 @@
+{
+  "name": "zach-nats-hapi",
+  "version": "0.0.0",
+  "description": "experiment using nats and graphql",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node --experimental-modules index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zpratt/nats-experiments.git"
+  },
+  "keywords": [
+    "nats",
+    "graphql",
+    "nodejs"
+  ],
+  "author": "zach pratt <zach@attackofzach.com> (http://attackofzach.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zpratt/nats-experiments/issues"
+  },
+  "homepage": "https://github.com/zpratt/nats-experiments#readme",
+  "dependencies": {
+    "hapi": "^17.2.3",
+    "hapi-hemera": "^4.3.0",
+    "isemail": "^3.2.0",
+    "nats": "^1.2.2",
+    "nats-hemera": "^6.1.1"
+  }
+}

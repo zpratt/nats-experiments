@@ -1,0 +1,15 @@
+{
+  "name": "nats-coffee-shops",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --experimental-modules index.js"
+  },
+  "author": "zach pratt <zach@attackofzach.com> (http://attackofzach.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "nats": "^1.2.2",
+    "nats-hemera": "^6.1.1"
+  }
+}

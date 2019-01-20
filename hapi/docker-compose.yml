@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  nats:
+    image: 'nats:latest'
+    entrypoint: "/gnatsd -DV"
+    expose:
+      - "4222"
+    ports:
+      - "8222:8222"
+    hostname: nats-server
+  api:
+    image: example-api
+    build:
+      context: "."
+    depends_on:
+      - nats
+    environment:
+      - "NATS_URI=nats://nats:4222"
+    ports:
+      - "5000:5000"
+  coffee-shops-receiver:
+    image: coffee-shops-receiver
+    build:
+      context: "./coffee-shops-receiver"
+    depends_on:
+      - nats
+    environment:
+      - "NATS_URI=nats://nats:4222"
